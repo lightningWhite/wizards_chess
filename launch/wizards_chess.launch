@@ -1,0 +1,10 @@
+<launch>
+  <node name="recognizer" pkg="wizards_chess" type="recognizer.py" output="screen">
+    <param name="lm" value="$(find wizards_chess)/src/wizards_chess.lm"/>
+    <param name="dict" value="$(find wizards_chess)/src/wizards_chess.dic"/>
+  </node>
+<!-- 
+  <node name="wizards_chess_subscriber" pkg="wizards_chess" type="wizards_chess_subscriber" output="screen">
+  </node>
+-->
+</launch>
