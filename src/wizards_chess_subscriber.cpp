@@ -47,20 +47,107 @@ void displayBoard(char board[][8]);
 int displayMenu();
 
 string variable;
+string source;
+string dest;
+int theIndex;
+int turn = 0;
+string moves;
+
+char board[8][8] =
+   {
+      { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+      { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+      { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+        NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+      { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+        NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+      { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+        NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+      { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+        NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+      { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+      { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+   };
+char fileName[256];
+ 
+
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
 void commandCallback(const std_msgs::String::ConstPtr& msg)
-{
-  ROS_INFO("I heard: [%s]", msg->data.c_str());
-  variable = msg->data.c_str();
+{ 
+  ROS_INFO("I HEARD: [%s]", msg->data.c_str());
+  string rawInput = msg->data.c_str();
+  
+//  if (theIndex == 0)
+//  {
+//     variable = "";
+//     source = rawInput;
+//     theIndex = 1;
+//  }  
+//  else if (theIndex == 1)
+//  {
+//     dest = rawInput;
+//     theIndex = 0;
+//  }
+
+  // Parse out the source and destination from "c4 to c5" format
+  variable = "";
+  variable += rawInput[0];
+  variable += rawInput[1];
+  variable += rawInput[6];
+  variable += rawInput[7];
+  //variable = source + dest;
+  //ROS_INFO("The variable: [%s]", variable.c_str());
+
+  Move move;
+            
+      // prompt
+      if(turn % 2 == 0)
+         cout << "(White):";
+      else
+         cout << "(Black):";
+      
+//      std::cout << "THE VARIABLE IS: " << variable << std::endl;
+      
+//     if (variable.size() != 4)
+//        break; // Loop until there's valid input
+      
+      move.text = variable;
+      
+      moves += move.text;
+
+     
+      if (move.text == string("?"))
+      {
+         displayMenu();
+         turn--;
+      }
+      else if (move.text == string ("test"))
+      {
+         displayTest(board);
+         turn --;
+      }
+     
+      // parse  
+      try
+      {
+         moveParse(move, board);
+         //cout << board[move.source.r][move.source.c];
+         makeMove(move, board, turn);
+      }
+      catch (string s) // if the function throws then the error will be display here     
+      {
+         cout << "ERROR: " << s << endl;
+         turn --;
+      }
+      
+      turn ++;
 }
 
 int main(int argc, char **argv)
 {
-   std::cout << "THIS IS WORKING!!!" << std::endl;
-   ROS_INFO("IT'S RUNNING!");
   /**
    * The ros::init() function needs to see argc and argv so that it can perform
    * any ROS arguments and name remapping that were provided at the command line.
@@ -102,24 +189,24 @@ int main(int argc, char **argv)
 
    cout << "\E[H\E[2j";
    cout <<endl;
-   char board[8][8] =
-      {
-         { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-         { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
-           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
-         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
-           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
-         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
-           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
-         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
-           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
-         { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-         { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-      };
-   char fileName[256];
+//   char board[8][8] =
+//      {
+//         { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+//         { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+//         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+//           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+//         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+//           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+//         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+//           NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+//         { NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE,
+//          NO_PIECE, NO_PIECE, NO_PIECE, NO_PIECE },
+//         { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+//         { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+//      };
+//   char fileName[256];
    displayBoard(board);
-   playChess(board, fileName);
+//   playChess(board, fileName);
 
   /**
    * ros::spin() will enter a loop, pumping callbacks.  With this version, all
@@ -127,10 +214,6 @@ int main(int argc, char **argv)
    * will exit when Ctrl-C is pressed, or the node is shutdown by the master.
    */
   ros::spin();
-
-   
-   
-   
 
   return 0;
 }
@@ -141,8 +224,8 @@ int main(int argc, char **argv)
  ***********************************************************************/
 int playChess(char board[][8], char fileName[])
 { 
-   int turn = 0;
-   string moves;
+//   int turn = 0;
+//   string moves;
    // forever
    for (;;)
    {
@@ -156,7 +239,12 @@ int playChess(char board[][8], char fileName[])
          cout << "(Black):";
       
       std::cout << "THE VARIABLE IS: " << variable << std::endl;
+      
+      if (variable.size() != 4)
+         break; // Loop until there's valid input
+      
       move.text = variable;
+      
       moves += move.text;
 
      

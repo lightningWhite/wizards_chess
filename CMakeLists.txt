@@ -203,7 +203,6 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-
+catkin_package()
 add_executable(wizards_chess_subscriber src/wizards_chess_subscriber.cpp)
 target_link_libraries(wizards_chess_subscriber ${catkin_LIBRARIES})
-catkin_package()
