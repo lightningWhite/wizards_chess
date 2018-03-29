@@ -343,9 +343,12 @@ int main()
 
    std::cin >> command;
 
-   string source = command[0] + command[1];
-   string dest = command[2] + command [3];
+   string source = command.substr(0,2);
+   string dest = command.substr(2,2); 
 
+   std::cout << "source: " << source << std::endl;
+   std::cout << "dest: " << dest << std::endl;
+   
    string gcodeSrc = mapToGcode(source); 
    string gcodeDest = mapToGcode(dest);
 
