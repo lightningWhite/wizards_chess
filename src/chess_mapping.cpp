@@ -1,50 +1,339 @@
 #include <iostream>
 #include <string>
-
-// enumerations for all possible inputs for the switched lookup table
-enum {a1, a2, a3, a4, a5, a6, a7, a8,
-      b1, b2, b3, b4, b5, b6, b7, b8,
-      c1, c2, c3, c4, c5, c6, c7, c8,
-      d1, d2, d3, d4, d5, d6, d7, d8,
-      e1, e2, e3, e4, e5, e6, e7, e8, 
-      f1, f2, f3, f4, f5, f6, f7, f8,
-      g1, g2, g3, g4, g5, g6, g7, g8,
-      h1, h2, h3, h4, h5, h6, h7, h8};
+#include <fstream>
 
 
 
 std::string mapToGcode(std::string input)
 {
-   std::string::size_type sz;
-   bool shiftRequired; // Keep track of if a shift is required
    std::string gcode;
 
-   // If the cell is on the nearer half
-   if (input[1] >= 5)
-   {
-      shiftRequired = false;
-   } 
-   else if (input[1] <=4) // If the cell is on the further half
-   {
-      shiftRequired = true;
-   }
-
    // Map the chess board cell to the gcode coordinate
-   if (input = "a1" || (input == "a5" && shiftRequired))
+   if (input = "a1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "a8")
    {
       gcode = "G90 X0 Y0";
    }
 
+   else if (input = "b1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   
+   else if (input = "c1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "b8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "c1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "c8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "d1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "d8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "e1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "e8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "f1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "f8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "g1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "g8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   else if (input = "h1")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h2")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h3")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h4")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h5")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h6")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h7")
+   {
+      gcode = "G90 X0 Y0";
+   }
+   else if (input = "h8")
+   {
+      gcode = "G90 X0 Y0";
+   }
+
+   return gcode;
 }
 
 
 int writeGcodeScript(gcodeSrc, gcodeDest)
 {
-   // Establish the origin: G92 X0 Y0
-   // Go to source
+   // Establish the origin: G92 X0 Y0   
+   string origin = "G92 X0 Y0";
+
+   // Write to the file:
+   ofstream fout;
+   fout.open("grbl.gcode");
+   fout << origin << "\n";
+   
+   // Go to source   
+   fout << gcodeSrc << "\n";
+   
    // Lift the magnet
-   // Go to destination
-   // Go to origin
+
+   // Go to destination   
+   fout << gcodeDest << "\n";
+
+   // Drop the magnet
+
+   // Go to origin   
+   fout << "G90 X0 Y0" << "\n";
+   
+   fout.close();
 }
 
 
@@ -61,6 +350,10 @@ int main()
    string gcodeDest = mapToGcode(dest);
 
    writeGcodeScript(gcodeSrc, gcodeDest);
+
+   // Execute the script
+
+   return 0;
 }
 
 
