@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -354,7 +355,8 @@ int main()
 
    writeGcodeScript(gcodeSrc, gcodeDest);
 
-   // Execute the script
+   // Execute the script that streams the gcode file
+   system("./simple_stream.py");   
 
    return 0;
 }
