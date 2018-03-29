@@ -12,31 +12,31 @@ std::string mapToGcode(std::string input)
    // Map the chess board cell to the gcode coordinate
    if (input == "a1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-260 Y-260";
    }
    else if (input == "a2")
    {
-      gcode = "G90 X0 Y0";
+     gcode = "G90 X-223.5 Y-223.5";
    }
    else if (input == "a3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-186.25 Y-186.25";
    }
    else if (input == "a4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-149 Y-149";
    }
    else if (input == "a5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-111.75 Y-111.75";
    }
    else if (input == "a6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-74.5 Y-74.5";
    }
    else if (input == "a7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-37.25 Y-37.25";
    }
    else if (input == "a8")
    {
@@ -73,7 +73,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "b8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X0 Y-35";
    }
    
    else if (input == "c1")
