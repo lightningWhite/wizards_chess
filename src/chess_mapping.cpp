@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 
-
+using namespace std;
 
 std::string mapToGcode(std::string input)
 {
@@ -310,7 +310,7 @@ std::string mapToGcode(std::string input)
 }
 
 
-int writeGcodeScript(gcodeSrc, gcodeDest)
+int writeGcodeScript(string gcodeSrc, string gcodeDest)
 {
    // Establish the origin: G92 X0 Y0   
    string origin = "G92 X0 Y0";
