@@ -73,7 +73,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "b8")
    {
-      gcode = "G90 X0 Y-35";
+      gcode = "G90 X24 Y-24";
    }
    
    else if (input == "c1")
@@ -104,42 +104,9 @@ std::string mapToGcode(std::string input)
    {
       gcode = "G90 X0 Y0";
    }
-   else if (input == "b8")
-   {
-      gcode = "G90 X0 Y0";
-   }
-
-   else if (input == "c1")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c2")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c3")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c4")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c5")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c6")
-   {
-      gcode = "G90 X0 Y0";
-   }
-   else if (input == "c7")
-   {
-      gcode = "G90 X0 Y0";
-   }
    else if (input == "c8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X61.25 Y-61.25";
    }
 
    else if (input == "d1")
@@ -172,7 +139,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "d8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X98.5 Y-98.5";
    }
 
    else if (input == "e1")
@@ -205,7 +172,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "e8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X135.75 Y-135.75";
    }
 
    else if (input == "f1")
@@ -238,7 +205,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "f8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X173 Y-173";
    }
 
    else if (input == "g1")
@@ -271,7 +238,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "g8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X210.25 Y-210.25";
    }
 
    else if (input == "h1")
@@ -304,7 +271,7 @@ std::string mapToGcode(std::string input)
    }
    else if (input == "h8")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X247.5 Y-247.5";
    }
 
    return gcode;
