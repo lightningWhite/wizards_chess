@@ -5,6 +5,8 @@
 #include <cassert>
 #include <string>
 #include <fstream>
+#include <sstream>
+
 using namespace std;
 
 #define NO_PIECE ' '   // There is no piece on this location of the board
@@ -14,6 +16,18 @@ using namespace std;
 #define BLACK_WP "\E[37;41m"
 #define BLACK_BP "\E[30;41m"
 #define CLEAR "\E[0m"
+
+
+
+//ros::init(argc, argv, "wizards_chess_subscriber");
+/**
+ * NodeHandle is the main access point to communications with the ROS system.
+ * The first NodeHandle constructed will fully initialize this node, and the last
+ * NodeHandle destructed will close down the node.
+ */
+//ros::NodeHandle n;
+ros::Publisher* globalPub;// = n.advertise<std_msgs::String>("chess/output", 1000);
+
 struct Coord
 {
    char r;   // row, from 0..7
@@ -103,47 +117,52 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
 
   Move move;
             
-      // prompt
-      if(turn % 2 == 0)
-         cout << "(White):";
-      else
-         cout << "(Black):";
+  // prompt
+  if(turn % 2 == 0)
+     cout << "(White):";
+  else
+     cout << "(Black):";
       
 //      std::cout << "THE VARIABLE IS: " << variable << std::endl;
       
 //     if (variable.size() != 4)
 //        break; // Loop until there's valid input
       
-      move.text = variable;
+  move.text = variable;
       
-      moves += move.text;
+  moves += move.text;
 
      
-      if (move.text == string("?"))
-      {
-         displayMenu();
-         turn--;
-      }
-      else if (move.text == string ("test"))
-      {
-         displayTest(board);
-         turn --;
-      }
+  if (move.text == string("?"))
+  {
+     displayMenu();
+     turn--;
+  }
+  else if (move.text == string ("test"))
+  {
+     displayTest(board);
+     turn --;
+  }
      
-      // parse  
-      try
-      {
-         moveParse(move, board);
-         //cout << board[move.source.r][move.source.c];
-         makeMove(move, board, turn);
-      }
-      catch (string s) // if the function throws then the error will be display here     
-      {
-         cout << "ERROR: " << s << endl;
-         turn --;
-      }
+  // parse  
+  try
+  {
+     moveParse(move, board);
+     //cout << board[move.source.r][move.source.c];
+     makeMove(move, board, turn);
+     
+     // Publish the move only if it's valid
+     std_msgs::String pubMsg;
+     pubMsg.data = move.text;  
+     globalPub->publish(pubMsg); 
+  }
+  catch (string s) // if the function throws then the error will be display here     
+  {
+     cout << "ERROR: " << s << endl;
+     turn --;
+  }
       
-      turn ++;
+  turn ++;
 }
 
 int main(int argc, char **argv)
@@ -182,13 +201,13 @@ int main(int argc, char **argv)
    * is the number of messages that will be buffered up before beginning to throw
    * away the oldest ones.
    */
+
   ros::Subscriber sub = n.subscribe("recognizer/output", 1000, commandCallback);
-
-
-  
+  ros::Publisher pub = n.advertise<std_msgs::String>("chess/output", 1000);
+  globalPub = &pub;
 
    cout << "\E[H\E[2j";
-   cout <<endl;
+   cout << endl;
 //   char board[8][8] =
 //      {
 //         { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },

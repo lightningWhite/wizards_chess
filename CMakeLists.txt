@@ -205,4 +205,6 @@ include_directories(
 
 catkin_package()
 add_executable(wizards_chess_subscriber src/wizards_chess_subscriber.cpp)
+add_executable(track_controller_node src/track_controller_node.cpp)
 target_link_libraries(wizards_chess_subscriber ${catkin_LIBRARIES})
+target_link_libraries(track_controller_node ${catkin_LIBRARIES})

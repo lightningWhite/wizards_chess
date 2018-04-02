@@ -329,7 +329,7 @@ int main()
    writeGcodeScript(gcodeSrc, gcodeDest);
 
    // Execute the script that streams the gcode file
-   system(".~/catkin_ws/src/wizards_chess/simple_stream.py");   
+   system("./simple_stream.py");   
 
    return 0;
 }

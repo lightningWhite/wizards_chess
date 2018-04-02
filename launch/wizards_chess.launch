@@ -3,8 +3,11 @@
     <param name="lm" value="$(find wizards_chess)/src/wizards_chess.lm"/>
     <param name="dict" value="$(find wizards_chess)/src/wizards_chess.dic"/>
   </node>
-<!-- 
+<!--Uncomment these two for full startup. Chess board won't be displayed though 
   <node name="wizards_chess_subscriber" pkg="wizards_chess" type="wizards_chess_subscriber" output="screen">
   </node>
+
+  <node name="track_controller_node" pkg="wizards_chess" type="track_controller_node" output="screen">
+
 -->
 </launch>
