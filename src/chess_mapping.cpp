@@ -290,11 +290,17 @@ int writeGcodeScript(string gcodeSrc, string gcodeDest)
    
    // Go to source   
    fout << gcodeSrc << "\n";
-   
+  
+   // Pause
+   fout << "G4 P1" << "\n";
+ 
    // Lift the magnet
 
    // Go to destination   
    fout << gcodeDest << "\n";
+
+   // Pause
+   fout << "G4 P1" << "\n";
 
    // Drop the magnet
 
