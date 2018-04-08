@@ -60,7 +60,7 @@ for line in f:
 
         
 # Wait here until grbl is finished to close serial port and file.
-raw_input("  Press <Enter> to exit and disable grbl.") 
+#raw_input("  Press <Enter> to exit and disable grbl.") 
 
 # Close file and serial port
 f.close()
