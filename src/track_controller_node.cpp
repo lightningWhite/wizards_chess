@@ -336,7 +336,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
   writeGcodeScript(gcodeSrc, gcodeDest);
 
   // Execute the script that streams the gcode file
-  system("~/catkin_ws/src/wizards_chess/src/simple_stream.py");   
+  system("sudo ~/catkin_ws/src/wizards_chess/src/simple_stream.py");
 }
 
 int main(int argc, char **argv)
