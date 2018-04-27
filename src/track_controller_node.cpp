@@ -314,7 +314,7 @@ int writeGcodeScript(string gcodeSrc, string gcodeDest)
 
 
 /**
- * This tutorial demonstrates simple receipt of messages over the ROS system.
+ * This gets called every time it recives a valid voice command
  */
 void commandCallback(const std_msgs::String::ConstPtr& msg)
 {

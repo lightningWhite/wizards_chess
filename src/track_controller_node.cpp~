@@ -47,233 +47,233 @@ std::string mapToGcode(std::string input)
 
    else if (input == "b1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-200 Y-300";
    }
    else if (input == "b2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-170 Y-260";
    }
    else if (input == "b3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-140 Y-220";
    }
    else if (input == "b4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-108 Y-180";
    }
    else if (input == "b5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-70 Y-150";
    }
    else if (input == "b6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-35 Y-110";
    }
    else if (input == "b7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X0 Y-70";
    }
    else if (input == "b8")
    {
-      gcode = "G90 X24 Y-24";
+      gcode = "G90 X40 Y-40";
    }
    
    else if (input == "c1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-170 Y-340";
    }
    else if (input == "c2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-140 Y-300";
    }
    else if (input == "c3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-105 Y-260";
    }
    else if (input == "c4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-60 Y-230";
    }
    else if (input == "c5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-30 Y-190";
    }
    else if (input == "c6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X10 Y-160";
    }
    else if (input == "c7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X40 Y-120";
    }
    else if (input == "c8")
    {
-      gcode = "G90 X61.25 Y-61.25";
+      gcode = "G90 X80 Y-80";
    }
 
    else if (input == "d1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-130 Y-380";
    }
    else if (input == "d2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-100 Y-340";
    }
    else if (input == "d3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-60 Y-310";
    }
    else if (input == "d4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-30 Y-270";
    }
    else if (input == "d5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X0 Y-230";
    }
    else if (input == "d6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X40 Y-200";
    }
    else if (input == "d7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X80 Y-160";
    }
    else if (input == "d8")
    {
-      gcode = "G90 X98.5 Y-98.5";
+      gcode = "G90 X120 Y-120";
    }
 
    else if (input == "e1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-100 Y-410";
    }
    else if (input == "e2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-70 Y-370";
    }
    else if (input == "e3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-30 Y-330";
    }
    else if (input == "e4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X0 Y-290";
    }
    else if (input == "e5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X40 Y-260";
    }
    else if (input == "e6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X80 Y-230";
    }
    else if (input == "e7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X120 Y-200";
    }
    else if (input == "e8")
    {
-      gcode = "G90 X135.75 Y-135.75";
+      gcode = "G90 X160 Y-160";
    }
 
    else if (input == "f1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-60 Y-450";
    }
    else if (input == "f2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-30 Y-400";
    }
    else if (input == "f3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X10 Y-370";
    }
    else if (input == "f4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X40 Y-330";
    }
    else if (input == "f5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X80 Y-290";
    }
    else if (input == "f6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X110 Y-250";
    }
    else if (input == "f7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X150 Y-220";
    }
    else if (input == "f8")
    {
-      gcode = "G90 X173 Y-173";
+      gcode = "G90 X180 Y-180";
    }
 
    else if (input == "g1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-20 Y-480";
    }
    else if (input == "g2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X10 Y-440";
    }
    else if (input == "g3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X40 Y-400";
    }
    else if (input == "g4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X80 Y-360";
    }
    else if (input == "g5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X120 Y-330";
    }
    else if (input == "g6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X150 Y-290";
    }
    else if (input == "g7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X180 Y-250";
    }
    else if (input == "g8")
    {
-      gcode = "G90 X210.25 Y-210.25";
+      gcode = "G90 X220 Y-220";
    }
 
    else if (input == "h1")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X-20 Y-500";
    }
    else if (input == "h2")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X20 Y-460";
    }
    else if (input == "h3")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X60 Y-420";
    }
    else if (input == "h4")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X90 Y-390";
    }
    else if (input == "h5")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X130 Y-350";
    }
    else if (input == "h6")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X160 Y-320";
    }
    else if (input == "h7")
    {
-      gcode = "G90 X0 Y0";
+      gcode = "G90 X200 Y-280";
    }
    else if (input == "h8")
    {
-      gcode = "G90 X247.5 Y-247.5";
+      gcode = "G90 X240 Y-240";
    }
 
    return gcode;
@@ -314,7 +314,7 @@ int writeGcodeScript(string gcodeSrc, string gcodeDest)
 
 
 /**
- * This tutorial demonstrates simple receipt of messages over the ROS system.
+ * This gets called every time it recives a valid voice command
  */
 void commandCallback(const std_msgs::String::ConstPtr& msg)
 {
@@ -322,7 +322,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
   
   string command;
 
-  command = msg.str();
+  command = msg->data.c_str();
 
   string source = command.substr(0,2);
   string dest = command.substr(2,2); 
@@ -336,7 +336,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
   writeGcodeScript(gcodeSrc, gcodeDest);
 
   // Execute the script that streams the gcode file
-  system("./simple_stream.py");   
+  system("sudo ~/catkin_ws/src/wizards_chess/src/simple_stream.py");
 }
 
 int main(int argc, char **argv)
